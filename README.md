@@ -12,4 +12,4 @@ The following steps are what I've done to organize these files:
 
 3. Rename files by adding photo-taken-year in front of each photo file.
 
-4. Move the ".mp4" files into the "videos" folder and the ".jpg" files into the "photo" file.
+4. Move the ".mp4" files into the "videos" folder and the ".jpg" files into the "photo" folder.
