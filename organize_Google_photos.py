@@ -1,3 +1,4 @@
+# This script describe the process of organizing Google takeout files.
 import os
 import glob
 import zipfile
