@@ -1,4 +1,4 @@
-# This script describe the process of organizing Google takeout files.
+# This script describes the process of organizing Google Takeout photos.
 import os
 import glob
 import zipfile
@@ -11,11 +11,11 @@ work_directory = "/Users/kofressia/Library/CloudStorage/OneDrive-Personal/photos
 os.chdir(work_directory)
 
 for file in os.listdir(work_directory):   # get the list of files
-    if zipfile.is_zipfile(file): # if it is a zipfile, extract it
-        with zipfile.ZipFile(file) as item: # treat the file as a zip
+    if zipfile.is_zipfile(file): # if it is a zip file, extract it
+        with zipfile.ZipFile(file) as item: # Treat the file as a zip
            item.extractall()  # extract it in the working directory
 
-# Second, delete unwanted files, i.e., xxx.json in a folder.
+# Second, delete unwanted files, i.e., "xxx.json" files in a folder.
 for root, dirs, files in os.walk(".", topdown = True):
     for file in filter(lambda x: x.endswith(".json"), files):
         os.remove(os.path.join(root, file))
@@ -30,7 +30,7 @@ for root, dirs, files in os.walk(".", topdown = True):
 
         if "Photos" in new_prefix:
             # extract the year name and store this info in my_prefix
-            my_prefix = new_prefix.split(" ")[2]  # The "Photo from 2015" string is splited into three parts, and we will use the last element, 
+            my_prefix = new_prefix.split(" ")[2]  # The "Photo from 2015" string is split into three parts, and we will use the last element, 
             # "2015" as the prefix for each photo.
             
             # Separate file name and file extension
@@ -47,7 +47,7 @@ video_files = glob.glob(os.path.join(work_directory, "*.mp4"), recursive=True)
 
 video_destination = "/Users/kofressia/Library/CloudStorage/OneDrive-Personal/photos/videos"
 
-# iterate on all files to move them to destination folder
+# iterate on all files to move them to the destination folder
 for file_path in video_files:
     dst_path = os.path.join(video_destination, os.path.basename(file_path))
     shutil.move(file_path, dst_path)
@@ -58,7 +58,7 @@ photo_files = glob.glob(os.path.join(work_directory, "*.jpg"))
 
 photo_destination = "/Users/kofressia/Library/CloudStorage/OneDrive-Personal/photos/photo"
 
-# iterate on all files to move them to destination folder
+# iterate on all files to move them to the destination folder
 for file_path in photo_files:
     dst_path = os.path.join(photo_destination, os.path.basename(file_path))
     shutil.move(file_path, dst_path)
