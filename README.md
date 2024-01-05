@@ -6,7 +6,7 @@ Explanation:
 
 The exported Google photos were split into multiple files due to size limitations. It appears like: "takeout001.zip", "takeout002.zip", etc in one "Takeout" folder.
 
-The following steps are what I've done to organize these files:
+I used the following steps to organize these files:
 
 1. Unzip ".zip" files, this will generate files into their corresponding year folders.
 
